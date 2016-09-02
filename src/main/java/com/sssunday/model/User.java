@@ -1,20 +1,33 @@
 package com.sssunday.model;
 
+/**
+ * 用户测试类
+ * @ClassName: User
+ * @author: sssunday
+ * @date: 2016年9月2日 上午11:46:00
+ */
 public class User {
 
+	/**
+	 * id
+	 */
 	private Long id;
 	
+	/**
+	 * 名称
+	 */
 	private String name;
 	
+	/**
+	 * 年龄
+	 */
 	private Long age;
 	
-	private String name_back;
-
-	public Long getId() {
+	public Long getId() throws Exception{
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Long id) throws Exception{
 		this.id = id;
 	}
 
@@ -34,18 +47,9 @@ public class User {
 		this.age = age;
 	}
 
-	
-	public String getName_back() {
-		return name_back;
-	}
-
-	public void setName_back(String name_back) {
-		this.name_back = name_back;
-	}
-
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age + ", name_back=" + name_back + "]";
+		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
 
 }
