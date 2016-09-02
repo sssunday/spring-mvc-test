@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sssunday.model.User;
 import com.sssunday.service.IUserService;
+import com.sssunday.utils.ResourcesUtils;
 
 @Controller("/")
 public class UserController {
