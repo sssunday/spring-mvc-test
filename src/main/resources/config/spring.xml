@@ -39,5 +39,6 @@
 	    </list>   
 	    </property>    
 	</bean> 
+	<import resource="classpath:config/redis-context.xml" />
 	<import resource="classpath:config/spring-mybatis.xml" />
 </beans>
