@@ -11,15 +11,30 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sssunday.model.User;
 import com.sssunday.service.IUserService;
-import com.sssunday.utils.ResourcesUtils;
 
 @Controller("/")
-public class UserController {
+public class IndexController {
 
 	@Autowired
 	IUserService userService;
 	
-	Logger log = Logger.getLogger(UserController.class);
+	Logger log = Logger.getLogger(IndexController.class);
+	
+	@RequestMapping("/index")
+	public String index(){
+		return "view/index.html";
+	}
+	
+	@RequestMapping("check.txt")
+    public String check() {
+        return "view/check.txt";
+    }
+	
+	@RequestMapping("check2.txt")
+    public String check2() {
+        return "view/check2.txt";
+    }
+	
 	
 	@ResponseBody
 	@RequestMapping("/queryUser")
@@ -31,10 +46,5 @@ public class UserController {
 			log.error(e.getMessage(),e);
 		}
 		return userList;
-	}
-	
-	@RequestMapping("/test")
-	public String testPage(){
-		return "test";
 	}
 }

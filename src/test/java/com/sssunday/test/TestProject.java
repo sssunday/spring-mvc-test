@@ -25,7 +25,7 @@ public class TestProject {
 				"classpath:config/spring.xml");
 		context.start();
 	}*/
-	@Test
+	/*@Test
 	public void testResources() {
 		ResourcesUtils resourcesUtils = ResourcesUtils.getResouce("properties/constant");
 		Logger log = Logger.getLogger(TestProject.class);
@@ -45,5 +45,5 @@ public class TestProject {
 		
 		String s = RedisUtils.get("test","1");
 		System.out.println(s);
-	}
+	}*/
 }
