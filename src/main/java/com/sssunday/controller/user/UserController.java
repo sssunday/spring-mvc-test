@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sssunday.annotation.TokenAccess;
 
-@Controller("user")
+@Controller
+@RequestMapping("/user")
 public class UserController {
 
 	/**
@@ -21,9 +22,9 @@ public class UserController {
 		return null;
 	}
 	
-	@RequestMapping("check.txt")
+	@RequestMapping("check3.txt")
     public String check() {
-        return "view/check.txt";
+        return "/view/check.txt";
     }
 	
 	/**

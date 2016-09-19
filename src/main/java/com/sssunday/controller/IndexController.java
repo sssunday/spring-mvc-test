@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sssunday.model.User;
 import com.sssunday.service.IUserService;
 
-@Controller("/")
+@Controller
+@RequestMapping("/index")
 public class IndexController {
 
 	@Autowired
@@ -22,19 +23,18 @@ public class IndexController {
 	
 	@RequestMapping("/index")
 	public String index(){
-		return "view/index.html";
+		return "/view/index.html";
 	}
 	
 	@RequestMapping("check.txt")
     public String check() {
-        return "view/check.txt";
+        return "/view/check.txt";
     }
 	
 	@RequestMapping("check2.txt")
     public String check2() {
-        return "view/check2.txt";
+        return "/view/check2.txt";
     }
-	
 	
 	@ResponseBody
 	@RequestMapping("/queryUser")
