@@ -20,4 +20,9 @@ public class UserServiceImpl implements IUserService{
 		return userDao.queryUser(id);
 	}
 
+
+	@Override
+	public int insertUser(User user) {
+		return userDao.insertUser(user);
+	}
 }

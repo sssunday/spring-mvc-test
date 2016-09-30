@@ -1,5 +1,7 @@
 package com.sssunday.model;
 
+import java.util.List;
+
 /**
  * 用户测试类
  * @ClassName: User
@@ -23,6 +25,16 @@ public class User {
 	 */
 	private Long age;
 	
+	List<User> u;
+	
+	public List<User> getU() {
+		return u;
+	}
+
+	public void setU(List<User> u) {
+		this.u = u;
+	}
+
 	public Long getId() throws Exception{
 		return id;
 	}

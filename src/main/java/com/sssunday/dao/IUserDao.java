@@ -9,4 +9,8 @@ import com.sssunday.model.User;
 public interface IUserDao {
 
 	List<User> queryUser(@Param("id")Integer id);
+
+	int insertUser(Long id);
+
+	int insertUser(User user);
 }

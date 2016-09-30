@@ -1,4 +1,4 @@
-package com.sssunday.utils;
+package com.sssunday.common.utils;
 
 import java.util.Set;
 
@@ -12,6 +12,12 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
+/**
+ * redis工具类
+ * @ClassName: RedisUtils
+ * @author: sssunday
+ * @date: 2016年9月27日 上午9:17:49
+ */
 @Component
 public class RedisUtils {
 
