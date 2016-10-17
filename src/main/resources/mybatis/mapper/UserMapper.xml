@@ -8,6 +8,23 @@
 		<result column="AGE" property="age"/>
 	</resultMap>
 	
+	<resultMap type="com.sssunday.model.Parent" id="ParentMap">
+		<result column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="price" property="price"/>
+		<collection property="childs" resultMap="ChildMap" ofType="com.sssunday.model.Parent"/>
+	</resultMap>
+	
+	<resultMap type="com.sssunday.model.Child" id="ChildMap">
+		<result column="CHILD_ID" property="id"/>
+		<result column="PARENT_ID" property="parentId"/>
+		<result column="STR" property="str"/>
+	</resultMap>
+	
+	<sql id="ParentAndChildColumn">
+		p.ID,p.NAME,p.PRICE,c.ID CHILD_ID,c.parent_id,c.str
+	</sql>
+	
 	<sql id="UserColumn">
 		ID,
 		NAME,
@@ -31,4 +48,11 @@
 	  	</selectKey>
 		insert into User (name,age) values (#{name},#{age})
 	</insert>
+	
+	<select id="testCollection" resultMap="ParentMap">
+		select <include refid="ParentAndChildColumn"></include>
+		from parent p
+		join child c
+		on p.id = c.parent_id
+	</select>
 </mapper>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sssunday.dao.IUserDao;
+import com.sssunday.model.Parent;
 import com.sssunday.model.User;
 import com.sssunday.service.IUserService;
 
@@ -24,5 +25,11 @@ public class UserServiceImpl implements IUserService{
 	@Override
 	public int insertUser(User user) {
 		return userDao.insertUser(user);
+	}
+
+
+	@Override
+	public List<Parent> testCollection() {
+		return userDao.testCollection();
 	}
 }

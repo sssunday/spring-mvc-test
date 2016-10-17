@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.sssunday.model.Parent;
 import com.sssunday.model.User;
 
 public interface IUserDao {
@@ -13,4 +14,6 @@ public interface IUserDao {
 	int insertUser(Long id);
 
 	int insertUser(User user);
+
+	List<Parent> testCollection();
 }

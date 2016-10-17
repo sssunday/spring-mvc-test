@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sssunday.common.utils.QiNiuUploadUtil;
 import com.sssunday.common.utils.ResourcesUtils;
 import com.sssunday.model.User;
 
@@ -70,7 +71,7 @@ public class TestProject {
 		System.out.println(map.get("u"));
 	}
 	
-	@Test
+	//@Test
 	public void test2() throws JsonProcessingException{
 		 String str="{buyer_id=2088502993562915, trade_no=2016092321001004910202574398, body=1, use_coupon=N, notify_time=2016-09-23 11:48:30, subject=9倍极速闪电解冻板 快速化冰创意厨房用品, sign_type=RSA, is_total_fee_adjust=N, notify_type=trade_status_sync, out_trade_no=14746022787771751_1474602279, gmt_payment=2016-09-23 11:44:52, trade_status=TRADE_SUCCESS, discount=0.00, sign=EL0fVfyHgWgIX00+vE9lyH3+tLM8m3hTXJ3qBaPYL93mWF9yddazhKCv1tOsNndkrFhcuaqQ4JRc3ZKGhwa0DWrGP8fE3hc3nJa5RAGLTrbP7XB9sE1+0y1HuR1XhCpbBrLmF6xObf/im5+3bv4oa9bLm38unAhA5i8BZbB+X4c=, gmt_create=2016-09-23 11:44:51, buyer_email=843458091@qq.com, price=78.00, total_fee=78.00, seller_id=2088121772091220, quantity=1, seller_email=winfor-lefu@winforit.com, notify_id=e92f4d9aca3139dab87b404ea0ef355n0u, payment_type=1}";
 		 Map<String,String> map=mapStringToMap(str);
@@ -89,5 +90,12 @@ public class TestProject {
 	String value=string.split("=")[1];
 	map.put(key, value);
 	}return map;
+	}
+	
+	@Test
+	public void testTokenQiniu(){
+		
+		System.out.println(QiNiuUploadUtil.getUpToken());
+		
 	}
 }

@@ -3,40 +3,29 @@
 <head lang="zh-CN">
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="../resources/css/uploadPic.css" >
 <title>欢迎</title>
 </head>
 <body>
 	<h1>你好</h1>
-	<div class="row">
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	  <div class="col-md-1">.col-md-1</div>
-	</div>
-	<div class="row">
-	  <div class="col-md-8" style="background-color:red">.col-md-8</div>
-	  <div class="col-md-4" style="background-color:green">.col-md-4</div>
-	</div>
-	<div class="row">
-	  <div class="col-md-4" style="background-color:red">.col-md-4</div>
-	  <div class="col-md-4" style="background-color:gold">.col-md-4</div>
-	  <div class="col-md-4" style="background-color:green">.col-md-4</div>
-	</div>
-	<div class="row">
-	  <div class="col-md-6" style="background-color:red">.col-md-6</div>
-	  <div class="col-md-6" style="background-color:green">.col-md-6</div>
-	</div>
-	
-	
+	<div id="container">
+                            <a class="btn btn-default btn-lg " id="pickfiles" href="#" >
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>选择文件</span>
+                            </a>
+                            <div>
+                        	<img id="testImage" src="" />
+                        </div>
+                        </div>
+<script type="text/javascript">
+</script>
 <script type="text/javascript" src="../resources/js/jquery-3.1.0.min.js"></script>
 <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resources/js/plupload.full.min.js"></script>
+<script type="text/javascript" src="../resources/js/qiniu.min.js?v=${}"></script>
+
+<script>
+document.write("<s" + "cript type='text/javascript' src='../resources/js/uploadFile.js?v=" + new Date().getTime() + "'></s" + "cript>");
+</script>
 </body>
 </html>

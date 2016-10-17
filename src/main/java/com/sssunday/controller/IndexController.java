@@ -1,7 +1,9 @@
 package com.sssunday.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,9 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.sssunday.common.utils.QiNiuUploadUtil;
 import com.sssunday.common.utils.ReadJsonFile;
 import com.sssunday.model.Area;
 import com.sssunday.model.City;
+import com.sssunday.model.Parent;
 import com.sssunday.model.Province;
 import com.sssunday.model.User;
 import com.sssunday.service.IUserService;
@@ -81,5 +86,22 @@ public class IndexController {
 			log.error(e.getMessage(),e);
 		}
 		return user.toString();
+	}
+	
+	@ResponseBody
+	@RequestMapping("/getUpToken")
+	public Map<String,Object> getUpToken(){
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("uptoken", QiNiuUploadUtil.getUpToken());
+		return map;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/testCollection")
+	public Map<String,Object> testCollection(){
+		Map<String,Object> map = new HashMap<String,Object>();
+		List<Parent> parents = userService.testCollection();
+		map.put("data", parents);
+		return map;
 	}
 }
