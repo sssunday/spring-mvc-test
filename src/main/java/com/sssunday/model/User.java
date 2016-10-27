@@ -1,7 +1,5 @@
 package com.sssunday.model;
 
-import java.util.List;
-
 /**
  * 用户测试类
  * @ClassName: User
@@ -25,16 +23,11 @@ public class User {
 	 */
 	private Long age;
 	
-	List<User> u;
+	/**
+	 * 测试用字段
+	 */
+	private String str;
 	
-	public List<User> getU() {
-		return u;
-	}
-
-	public void setU(List<User> u) {
-		this.u = u;
-	}
-
 	public Long getId() throws Exception{
 		return id;
 	}
@@ -59,9 +52,18 @@ public class User {
 		this.age = age;
 	}
 
+	
+	public String getStr() {
+		return str;
+	}
+
+	public void setStr(String str) {
+		this.str = str;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
+		return "User [id=" + id + ", name=" + name + ", age=" + age + ", str=" + str + "]";
 	}
 
 }

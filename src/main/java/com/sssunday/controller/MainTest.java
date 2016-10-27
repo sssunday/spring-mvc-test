@@ -1,19 +1,18 @@
 package com.sssunday.controller;
 
-import org.apache.log4j.Logger;
-
-import com.sssunday.common.utils.ResourcesUtils;
-
 public class MainTest {
 
 	public static void main(String[] args) {
-		Logger log = Logger.getLogger(MainTest.class);
-		try {
-			ResourcesUtils resourcesUtils = ResourcesUtils.getResouce("properties/constant");
-			String s = resourcesUtils.getValue("propFrom");
-			System.out.println(s);
-		}catch (Exception e) {
-			log.error(e.getMessage(),e);
-		}
+		
+		Integer a = new Integer(100);
+		Integer b = new Integer(100);
+		
+		Integer c = 200;
+		Integer d = 200;
+		
+		System.out.println(a==b);
+		
+		System.out.println(c==d);
+		
 	}
 }

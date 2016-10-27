@@ -6,7 +6,7 @@ import com.sssunday.common.utils.ResourcesUtils;
 
 public interface Constant {
 
-	final Map<String, String> MAP = ResourcesUtils.getResouce("public_system").getMap();
+	final Map<String, String> MAP = ResourcesUtils.getResouce("properties/public_system").getMap();
 
 	
 	interface QiNiuFileCfg {
