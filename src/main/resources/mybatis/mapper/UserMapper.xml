@@ -5,7 +5,6 @@
 	<resultMap type="com.sssunday.model.User" id="UserMap">
 		<result column="ID" property="id"/>
 		<result column="NAME" property="name"/>
-		<result column="AGE" property="age"/>
 	</resultMap>
 	
 	<sql id="UserColumn">
@@ -20,8 +19,48 @@
 		from User
 		<where> 
 		<if test="id != null">
-		and id=${id}
+		and id=#{id}
 		</if>
 		</where>
+	</select>
+	
+	<resultMap type="com.sssunday.model.Parent" id="ParentMap">
+		<result column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="price" property="price"/>
+		<collection property="childs" resultMap="ChildMap" ofType="com.sssunday.model.Parent"/>
+	</resultMap>
+	
+	<resultMap type="com.sssunday.model.Child" id="ChildMap">
+		<result column="CHILD_ID" property="id"/>
+		<result column="PARENT_ID" property="parentId"/>
+		<result column="STR" property="str"/>
+	</resultMap>
+	
+	<sql id="ParentAndChildColumn">
+		p.ID,p.NAME,p.PRICE,c.ID CHILD_ID,c.parent_id,c.str
+	</sql>
+	<insert id="insertUser" parameterType="com.sssunday.model.User">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID 
+	  	</selectKey>
+		insert into User (name,age) values (#{name},#{age})
+	</insert>
+	
+	<insert id="insertTestIndex" parameterType="java.util.Map">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID 
+	  	</selectKey>
+		insert into test_index 
+		(str1,str2,str3,str4,str5,str6,str7,str8,str9,str10,str11,str12,str13,str14,str15,str16,str17,str18,str19,str20)
+		values 
+		(#{str1},#{str2},#{str3},#{str4},#{str5},#{str6},#{str7},#{str8},#{str9},#{str10},#{str11},#{str12},#{str13},#{str14},#{str15},#{str16},#{str17},#{str18},#{str19},#{str20})
+	</insert>
+	
+	<select id="testCollection" resultMap="ParentMap">
+		select <include refid="ParentAndChildColumn"></include>
+		from parent p
+		join child c
+		on p.id = c.parent_id
 	</select>
 </mapper>

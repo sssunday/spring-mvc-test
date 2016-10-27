@@ -23,6 +23,11 @@ public class User {
 	 */
 	private Long age;
 	
+	/**
+	 * 测试用字段
+	 */
+	private String str;
+	
 	public Long getId() throws Exception{
 		return id;
 	}
@@ -47,9 +52,18 @@ public class User {
 		this.age = age;
 	}
 
+	
+	public String getStr() {
+		return str;
+	}
+
+	public void setStr(String str) {
+		this.str = str;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
+		return "User [id=" + id + ", name=" + name + ", age=" + age + ", str=" + str + "]";
 	}
 
 }

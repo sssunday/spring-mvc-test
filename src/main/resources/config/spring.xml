@@ -34,16 +34,15 @@
 		</property>
 	</bean> -->
 	
-	<mvc:annotation-driven/> 
-	<!-- 设置不过滤内容，比如:css,jquery,img 等资源文件 -->  
+	<mvc:annotation-driven/>
 	<mvc:resources location="/resources/" mapping="/resources/**" />  
-	<mvc:resources location="/view/" mapping="/view/**" />  
+	<mvc:resources location="/view/" mapping="/view/**" />
 	
 	<!-- 拦截器配置 -->
 	<mvc:interceptors>
 	   <mvc:interceptor>
 		<mvc:mapping path="/**" />
-		<bean class="com.sssunday.interceptor.TokenInterceptor" />
+		<bean class="com.sssunday.common.interceptor.TokenInterceptor" />
 	  </mvc:interceptor> 
 	</mvc:interceptors>
 	

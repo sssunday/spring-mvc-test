@@ -1,4 +1,4 @@
-package com.sssunday.utils;
+package com.sssunday.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.text.MessageFormat;
@@ -8,6 +8,11 @@ import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
 
+/**
+ * 读取资源文件工具类
+ * @ClassName: ResourcesUtils
+ * @author: sssunday
+ */
 public class ResourcesUtils {
 
 	private ResourceBundle resourceBundle;
