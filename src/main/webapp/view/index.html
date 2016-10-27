@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="zh-CN">
 <meta charset="UTF-8">
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="../resources/css/uploadPic.css" >
 <title>欢迎</title>
 </head>
 <body>
 	<h1>你好</h1>
+	<div id="container">
+                            <a class="btn btn-default btn-lg " id="pickfiles" href="#" >
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>选择文件</span>
+                            </a>
+                            <div>
+                        	<img id="testImage" src="" />
+                        </div>
+                        </div>
+                        <a class="btn btn-default btn-lg " id="query" href="#" >
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>查询</span>
+                            </a>
+<script type="text/javascript">
+</script>
+<script type="text/javascript" src="../resources/js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resources/js/plupload.full.min.js"></script>
+<script type="text/javascript" src="../resources/js/qiniu.min.js"></script>
+<script type="text/javascript" src="../resources/js/index.js"></script>
 
-<script type="text/javascript" src="resources/js/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+<script>
+document.write("<s" + "cript type='text/javascript' src='../resources/js/uploadFile.js?v=" + new Date().getTime() + "'></s" + "cript>");
+</script>
 </body>
 </html>

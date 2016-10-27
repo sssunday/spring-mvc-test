@@ -1,4 +1,4 @@
-package com.sssunday.interceptor;
+package com.sssunday.common.interceptor;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.messaging.handler.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.sssunday.annotation.TokenAccess;
+import com.sssunday.common.annotation.TokenAccess;
 
 import net.sf.json.JSONObject;
 
 /**
  * 拦截器，验证token
- * @author sssunday
- *
+ * @ClassName: TokenInterceptor
+ * @author: sssunday
+ * @date: 2016年9月27日 上午9:20:36
  */
 public class TokenInterceptor extends HandlerInterceptorAdapter{
 

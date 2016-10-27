@@ -1,4 +1,4 @@
-package com.sssunday.utils;
+package com.sssunday.common.utils;
 
 import java.nio.charset.Charset;
 
@@ -7,6 +7,13 @@ import org.springframework.data.redis.serializer.SerializationException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+/**
+ * redis相关的json处理工具类 |
+ * 普通json可直接用ObjectMapper处理
+ * @ClassName: JsonRedisSeriaziler
+ * @author: sssunday
+ * @date: 2016年9月27日 上午9:18:19
+ */
 public class JsonRedisSeriaziler {
 
 	public static final String EMPTY_JSON = "{}";
