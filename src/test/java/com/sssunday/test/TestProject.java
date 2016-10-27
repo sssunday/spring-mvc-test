@@ -61,7 +61,6 @@ public class TestProject {
 		u.setId(1L);
 		u.setAge(20L);
 		u.setName("json");
-		u.setU(uList);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String str = mapper.writeValueAsString(u);
