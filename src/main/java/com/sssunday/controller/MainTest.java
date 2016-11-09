@@ -1,18 +1,15 @@
 package com.sssunday.controller;
 
+import com.sssunday.common.utils.ReplaceEmojiUtils;
+
 public class MainTest {
 
 	public static void main(String[] args) {
 		
-		Integer a = new Integer(100);
-		Integer b = new Integer(100);
+		String a = "\\xF0\\x9F\\x98\\x8A";
 		
-		Integer c = 200;
-		Integer d = 200;
-		
-		System.out.println(a==b);
-		
-		System.out.println(c==d);
-		
+		String b = ReplaceEmojiUtils.filterEmoji(a);
+		System.out.println(a);
+		System.out.println(b);
 	}
 }

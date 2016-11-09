@@ -1,6 +1,5 @@
 package com.sssunday.controller;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +31,6 @@ import com.sssunday.model.User;
 import com.sssunday.service.IUserService;
 
 @Controller
-@RequestMapping("/index")
 public class IndexController {
 
 	@Autowired
@@ -40,8 +38,8 @@ public class IndexController {
 	
 	Logger log = Logger.getLogger(IndexController.class);
 	
-	@RequestMapping("/index")
-	public String index2(){
+	@RequestMapping("/")
+	public String index(){
 		return "/view/index.html";
 	}
 
