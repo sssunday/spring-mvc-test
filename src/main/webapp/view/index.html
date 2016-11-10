@@ -3,24 +3,52 @@
 <head lang="zh-CN">
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" >
-<link rel="stylesheet" type="text/css" href="resources/css/uploadPic.css" >
+<link rel="stylesheet" type="text/css" href="resources/css/index.css" >
 <title>欢迎</title>
 </head>
 <body>
 	<h1>你好</h1>
 	<div id="container">
-                            <a class="btn btn-default btn-lg " id="pickfiles" href="#" >
-                                <i class="glyphicon glyphicon-plus"></i>
-                                <span>选择文件</span>
-                            </a>
-                            <div>
-                        	<img id="testImage" src="" />
-                        </div>
-                        </div>
-                        <a class="btn btn-default btn-lg " id="query" href="#" >
-                                <i class="glyphicon glyphicon-plus"></i>
-                                <span>查询</span>
-                            </a>
+        <a class="btn btn-default btn-lg " id="pickfiles" href="#" >
+            <i class="glyphicon glyphicon-plus"></i>
+            <span>选择文件</span>
+        </a>
+        <div>
+       		<img id="testImage" style="width:300px" src="" />
+        </div>
+    </div>
+    <div class="btnForText">
+    	<span>
+	    	<a class="btn btn-default btn-lg " id="queryJson">
+	           <i class="glyphicon glyphicon-plus"></i>
+	           <span>查询json</span>
+	        </a>
+        </span>
+        <span>
+        	<a class="btn btn-default btn-lg " id="queryJsonp">
+	           <i class="glyphicon glyphicon-plus"></i>
+	           <span>查询后台jsonp</span>
+	        </a>
+        </span>
+        
+        <span>
+        	<a class="btn btn-default btn-lg " id="getJsonFile">
+	           <i class="glyphicon glyphicon-plus"></i>
+	           <span>获取jsonp.json文件内容</span>
+	        </a>
+        </span>
+        
+        <a class="btn btn-default btn-lg " id="clearQuery">
+           <i class="glyphicon glyphicon-plus"></i>
+           <span>清除</span>
+        </a>
+        <div>
+        	<textarea id="jsonArea" style="width:300px;height:500px;resize: none;" placeholder="json"></textarea>
+        	<textarea id="jsonpArea" style="width:300px;height:500px;resize: none;" placeholder="jsonp"></textarea>
+        	<textarea id="jsonFileArea" style="width:300px;height:500px;resize: none;" placeholder="jsonFile"></textarea>
+        </div>
+    </div>
+        	
 <script type="text/javascript">
 </script>
 <script type="text/javascript" src="resources/js/jquery-3.1.0.min.js"></script>

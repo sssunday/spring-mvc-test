@@ -2,6 +2,7 @@ package com.sssunday.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sssunday.common.utils.CaptchaUtils;
+import com.sssunday.common.utils.JsonpUtils;
 import com.sssunday.common.utils.QiNiuUploadUtil;
 import com.sssunday.common.utils.ReadJsonFile;
 import com.sssunday.model.Area;
@@ -83,11 +85,33 @@ public class IndexController {
 		List<User> userList = new ArrayList<User>();
 		try {
 			userList =  userService.queryUser(id);
+			for (User user : userList) {
+				user.setTimestamp(System.currentTimeMillis());
+			}
 		} catch (Exception e) {
 			log.error(e.getMessage(),e);
 		}
 		return userList;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/queryUserJsonp")
+	public String queryUserJsonp(HttpServletRequest request,Integer id){
+		
+		String callbackFunName =request.getParameter("callback");
+		
+		List<User> userList = new ArrayList<User>();
+		try {
+			userList =  userService.queryUser(id);
+			for (User user : userList) {
+				user.setTimestamp(System.currentTimeMillis());
+			}
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+		return JsonpUtils.jsonpBuild(callbackFunName, userList);
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping("/insertUser")

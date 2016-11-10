@@ -1,0 +1,1 @@
+json([{"id":1,"name":"test","age":15,"str":"jsonFile1","timestamp":1478764681205},{"id":2,"name":"test2","age":11,"str":"jsonFile2","timestamp":1478764681205}])
