@@ -2,8 +2,8 @@ $(function() {
 	$('#queryJson').on('click',function(){
 		var url = 'queryUser';
 		$.get(url,function(data){
+			$('#jsonArea').html('');
 			$('#jsonArea').html(JSON.stringify(data,null,'\t'));
-			$('#jsonArea').show();
 		})
 	})
 	
@@ -15,6 +15,7 @@ $(function() {
              url: url,
              dataType: "jsonp",
              success: function(json){
+            	 $('#jsonpArea').html('');
             	 $('#jsonpArea').html(JSON.stringify(json,null,'\t'));
              },
              error: function(data){
@@ -31,6 +32,7 @@ $(function() {
             dataType: "jsonp",
             jsonpCallback:"json",
             success: function(json){
+            	$('#jsonFileArea').html('');
            	 $('#jsonFileArea').html(JSON.stringify(json,null,'\t'));
             },
             error: function(data){
@@ -42,5 +44,6 @@ $(function() {
 	$('#clearQuery').on('click',function(){
 		$('#jsonArea').html('');
 		$('#jsonpArea').html('');
+		$('#jsonFileArea').html('');
 	})
 })
