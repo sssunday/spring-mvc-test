@@ -5,12 +5,15 @@
 	<resultMap type="com.sssunday.model.User" id="UserMap">
 		<result column="ID" property="id"/>
 		<result column="NAME" property="name"/>
+		<result column="AGE" property="age"/>
+		<result column="STR_1" property="str"/>
 	</resultMap>
 	
 	<sql id="UserColumn">
 		ID,
 		NAME,
-		AGE
+		AGE,
+		STR_1
 	</sql>
 	
 	<select id="queryUser" resultMap="UserMap">

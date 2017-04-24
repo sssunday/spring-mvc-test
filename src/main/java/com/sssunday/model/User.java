@@ -26,7 +26,16 @@ public class User {
 	/**
 	 * 测试用字段
 	 */
-	private String str;
+	private String str = "testStr";
+	
+	/**
+	 * 时间戳
+	 */
+	private Long timestamp = System.currentTimeMillis();
+	
+	public User() {
+  		System.out.println("init User");
+	}
 	
 	public Long getId() throws Exception{
 		return id;
@@ -61,9 +70,17 @@ public class User {
 		this.str = str;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age + ", str=" + str + "]";
+	
+	public Long getTimestamp() {
+		return timestamp;
 	}
 
+	public void setTimestamp(Long timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", age=" + age + ", str=" + str + ", timestamp=" + timestamp + "]";
+	}
 }
