@@ -26,12 +26,16 @@ public class User {
 	/**
 	 * 测试用字段
 	 */
-	private String str;
+	private String str = "testStr";
 	
 	/**
 	 * 时间戳
 	 */
-	private Long timestamp;
+	private Long timestamp = System.currentTimeMillis();
+	
+	public User() {
+  		System.out.println("init User");
+	}
 	
 	public Long getId() throws Exception{
 		return id;
