@@ -4,6 +4,6 @@ import com.springlearn.model.User;
 
 public interface IUserService {
 
-	public void initUser(User u);
+	public User initUser(User u);
 
 }

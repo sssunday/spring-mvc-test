@@ -24,6 +24,9 @@
 			<!-- 通知（代理要做的事） -->
 			<aop:before method="doBefore" pointcut-ref="businessService"/>
 			<aop:after method="doAfter" pointcut-ref="businessService"/>
+			<aop:around method="doAround" pointcut-ref="businessService"/>
+			<aop:after-returning method="doAfterReturning" pointcut-ref="businessService"/>
+			<aop:after-throwing method="doAfterThrowing" pointcut-ref="businessService" throwing="ex"/>
 		</aop:aspect>
 	</aop:config>
 	
